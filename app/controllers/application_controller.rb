@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
+  private
+  
   def require_signin
-    unless session[:user_id]
+    unless current_user
       redirect_to signin_url, alert: 'Please sign in first!'
     end
   end
