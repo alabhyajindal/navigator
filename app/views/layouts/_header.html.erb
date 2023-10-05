@@ -1,6 +1,10 @@
 <nav>
   <ul>
-    <li><%= link_to 'Sign up', signup_path %></li>
-    <li><%= link_to 'Sign in', signin_path %></li>
+    <% if current_user %>
+      <li><%= link_to 'Sign out', session_path, data: { turbo_method: 'delete' } %></li>
+    <% else %>
+      <li><%= link_to 'Sign in', signin_path %></li>
+      <li><%= link_to 'Sign up', signup_path %></li>
+    <% end %>
   </ul>
 </nav>
