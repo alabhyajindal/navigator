@@ -1,6 +1,8 @@
 :root {
     --width: 800px;
     --background-color: #fff;
+    --alert-color: lightcoral;
+    --notice-color: lightgreen;
 }
 
 body {
@@ -45,5 +47,19 @@ input[type=text], input[type=email], input[type=password] {
     margin-bottom: 4px;
 }
 
+/* Flash */
+
+.alert, .notice {
+    text-align: center;
+    padding: 12px;
+}
+
+.alert {
+    background-color: var(--alert-color);
+}
+
+.notice {
+    background-color: var(--notice-color);
+}
 
 
