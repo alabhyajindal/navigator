@@ -1,11 +1,19 @@
+:root {
+    --width: 800px;
+    --background-color: #fff;
+}
+
 body {
+    max-width: var(--width);
+    margin: auto;
     line-height: 1.5;
+    background-color: var(--background-color);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-flow: row wrap;
 }
 
 a {
@@ -15,6 +23,10 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+nav a {
+    margin-right: 8px;
 }
 
 input[type=submit] {
