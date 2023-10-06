@@ -4,6 +4,7 @@
     --alert-color: lightcoral;
     --notice-color: lightgreen;
     --link-color: dodgerblue;
+    --logo-color: #000;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
     background-color: var(--background-color);
 }
 
-nav {
+header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;

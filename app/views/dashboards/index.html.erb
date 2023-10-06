@@ -1,5 +1,10 @@
-<h1>Welcome to Navigator</h1>
-
 <p>"Pitch about the product"</p>
 
-<%= link_to 'Sign up', signup_path %>
+<% if current_user %>
+  <p>Hello <%= current_user.name %></p>
+<% else %>
+  <nav>
+    <%= link_to 'Sign up', signup_path %>
+    <%= link_to 'Sign in', signin_path %>
+  </nav>
+<% end %>

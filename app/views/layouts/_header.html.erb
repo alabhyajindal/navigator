@@ -1,16 +1,14 @@
-<nav>
-  <p>
-    <%= link_to 'Navigator', root_url %>
-  </p>
+<header>
+  <%= link_to content_tag(:h1, 'Navigator', class: 'logo'), root_url %>
   <% if current_user %>
-    <span>
-      <%= link_to 'Account', current_user %>
-      <%= link_to 'Sign out', session_path, data: { turbo_method: :delete } %>
-    </span>
-  <% else %>
-    <span>
-      <%= link_to 'Sign in', signin_path %>
-      <%= link_to 'Sign up', signup_path %>
-    </span>
+    <nav>
+      <span>
+        <%= link_to 'Home', dashboard_path %>
+      </span>
+      <span>
+        <%= link_to 'Account', current_user %>
+        <%= link_to 'Sign out', session_path, data: { turbo_method: :delete } %>
+      </span>
+    </nav>
   <% end %>
-</nav>
+</header>
