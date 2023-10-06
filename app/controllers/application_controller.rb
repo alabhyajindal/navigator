@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   def require_signin
     unless current_user
-      redirect_to signin_url, alert: 'Please sign in first!'
+      redirect_to signin_url, alert: 'Unauthorized'
     end
   end
 
