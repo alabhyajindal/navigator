@@ -1,8 +1,4 @@
-<p>"Pitch about the product"</p>
-
-<% if current_user %>
-  <p>Hello <%= current_user.name %></p>
-<% else %>
+<% unless current_user %>
   <nav>
     <%= link_to 'Sign up', signup_path %>
     <%= link_to 'Sign in', signin_path %>
