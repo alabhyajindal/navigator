@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to root_url, notice: 'Account updated'
+      redirect_to dashboard_path, notice: 'Account updated'
     else
       render :edit, status: :unprocessable_entity
     end
