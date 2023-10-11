@@ -4,3 +4,7 @@
     <%= link_to 'Sign in', signin_path %>
   </nav>
 <% end %>
+
+<% @locations.each do |l| %>
+  <p><%= l.city %></p>
+<% end %>

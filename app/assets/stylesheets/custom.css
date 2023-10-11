@@ -19,6 +19,7 @@ header nav {
     justify-content: space-between;
     align-items: center;
     flex-flow: row wrap;
+    margin-bottom: 18px;
 }
 
 a {
