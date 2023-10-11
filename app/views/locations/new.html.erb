@@ -1,6 +1,7 @@
-<%= form_with url: location_path do |f| %>
+<%#= form_with url: locations_path do |f| %>
+<%= form_with model: @location do |f| %>
   <%= f.label :city %>
-  <%= f.text_field :city %>
+  <%= f.text_field :city, autocomplete: "off" %>
 
   <%= f.submit %>
 <% end %>

@@ -6,6 +6,7 @@ class LocationsController < ApplicationController
   end
 
   def new
+    @location = current_user.locations.new
     @locations = current_user.locations
   end
 
@@ -20,6 +21,6 @@ class LocationsController < ApplicationController
   private
 
   def location_params
-    params.permit(:city)
+    params.require(:location).permit(:city)
   end
 end
