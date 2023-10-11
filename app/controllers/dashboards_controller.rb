@@ -5,4 +5,7 @@ class DashboardsController < ApplicationController
 
   def show
   end
+
+  def cities
+  end
 end
