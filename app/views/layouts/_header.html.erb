@@ -3,7 +3,8 @@
   <% if current_user %>
     <nav>
       <span>
-        <%= link_to 'New', new_location_path %>
+        <%= link_to 'Home', root_url %>
+        <%= link_to 'Manage', new_location_path %>
       </span>
       <span>
         <%= link_to 'Account', current_user %>

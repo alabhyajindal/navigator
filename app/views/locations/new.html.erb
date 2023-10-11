@@ -4,3 +4,7 @@
 
   <%= f.submit %>
 <% end %>
+
+<% @locations.each do |l| %>
+  <p><%= l.city %></p>
+<% end %>

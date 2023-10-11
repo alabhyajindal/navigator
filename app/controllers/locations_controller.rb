@@ -6,12 +6,12 @@ class LocationsController < ApplicationController
   end
 
   def new
-    @location = current_user.locations.new
+    @locations = current_user.locations
   end
 
   def create
     if current_user.locations.create(location_params)
-      redirect_to root_url, notice: 'City added'
+      redirect_to new_location_path, notice: 'City added'
     else
       render :new, status: :unprocessable_entity
     end
