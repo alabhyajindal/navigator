@@ -7,7 +7,7 @@ class LocationsController < ApplicationController
 
   def new
     @location = current_user.locations.new
-    @locations = current_user.locations
+    @locations = current_user.locations.sort_by &:date_visited
   end
 
   def create
@@ -25,15 +25,21 @@ class LocationsController < ApplicationController
   def update
     location = Location.find(params[:id])
     if location.update(location_params)
-      redirect_to location_path(location), notice: 'Location updated'
+      redirect_to new_location_path, notice: 'Location updated'
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
+  def destroy
+    location = Location.find(params[:id])
+    location.destroy
+    redirect_to new_location_path, alert: 'Location deleted'
+  end
+
   private
 
   def location_params
-    params.require(:location).permit(:city)
+    params.require(:location).permit(:city, :date_visited, :date_left)
   end
 end
