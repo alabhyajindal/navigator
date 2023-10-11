@@ -18,6 +18,10 @@ class LocationsController < ApplicationController
     end
   end
 
+  def edit
+    @location = Location.find(params[:id])
+  end
+
   private
 
   def location_params
