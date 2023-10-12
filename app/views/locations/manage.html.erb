@@ -1,5 +1,9 @@
 <h3>Add location</h3>
-<%= render 'form', location: @location %>
+<%#= render 'form', location: @location %>
+<label> Search location
+<input type="text">
+</label>
+<button class="search">Search</button>
 
 <h3>Edit locations</h3>
 <% @locations.each do |l| %>
