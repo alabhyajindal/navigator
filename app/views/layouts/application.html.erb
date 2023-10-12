@@ -11,9 +11,7 @@
 </head>
 
 <body>
-<% unless current_page?(action: 'navigator') %>
-  <%= render 'layouts/header' %>
-<% end %>
+<%= render 'layouts/header' %>
 <%= render 'layouts/flash' %>
 <%= yield %>
 </body>

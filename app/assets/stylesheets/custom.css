@@ -67,4 +67,10 @@ input[type=text], input[type=email], input[type=password] {
     background-color: var(--notice-color);
 }
 
-
+.marker {
+    background-color: #1971c2;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+}

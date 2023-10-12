@@ -3,7 +3,7 @@
     <nav>
       <span>
         <%= link_to 'Home', root_url %>
-        <%= link_to 'Navigator', navigator_path, target: '_blank', rel: 'nofollow' %>
+        <%= link_to 'Navigator', navigator_path %>
         <%= link_to 'Manage', manage_path %>
       </span>
       <span>
@@ -11,5 +11,9 @@
         <%= link_to 'Sign out', session_path, data: { turbo_method: :delete } %>
       </span>
     </nav>
+  <% end %>
+  <% if current_user && current_page?(action: 'navigator') %>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet'/>
   <% end %>
 </header>
