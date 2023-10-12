@@ -1,5 +1,6 @@
 <h3>Add location</h3>
 <%#= render 'form', location: @location %>
+<button id="test">Test</button>
 
 <h3>Edit locations</h3>
 <% @locations.each do |l| %>
@@ -9,4 +10,5 @@
   </div>
 <% end %>
 
-<%= javascript_include_tag "custom/manage" %>
+  <%= javascript_import_module_tag "custom/manage" %>
+
