@@ -1,10 +1,9 @@
 <header>
-  <%= link_to content_tag(:h1, 'Navigator', class: 'logo'), root_url %>
   <% if current_user %>
     <nav>
       <span>
         <%= link_to 'Home', root_url %>
-        <%= link_to 'Navigator', navigator_path %>
+        <%= link_to 'Navigator', navigator_path, target: '_blank', rel: 'nofollow' %>
         <%= link_to 'Manage', manage_path %>
       </span>
       <span>
