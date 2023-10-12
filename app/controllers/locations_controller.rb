@@ -15,7 +15,7 @@ class LocationsController < ApplicationController
 
   def create
     if current_user.locations.create(location_params)
-      redirect_to new_location_path, notice: 'Location updated'
+      redirect_to new_location_path, notice: 'Location added'
     else
       render :new, status: :unprocessable_entity
     end
