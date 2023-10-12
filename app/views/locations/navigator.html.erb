@@ -48,13 +48,9 @@
     zoom: 5,
   });
 
-  function drawPoints() {
-    for (const [index, feature] of data.features.entries()) {
-      const el = document.createElement('div')
-      el.className = 'marker'
-      new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map)
-    }
+  for (const [_index, feature] of data.features.entries()) {
+    const el = document.createElement('div')
+    el.className = 'marker'
+    new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map)
   }
-
-  drawPoints()
 </script>
