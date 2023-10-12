@@ -5,9 +5,12 @@ class LocationsController < ApplicationController
     @locations = current_user.locations
   end
 
-  def new
+  def manage
     @location = current_user.locations.new
     @locations = current_user.locations
+  end
+
+  def navigator
   end
 
   def create
@@ -40,6 +43,6 @@ class LocationsController < ApplicationController
   private
 
   def location_params
-    params.require(:location).permit(:city, :date_visited, :date_left, :notes)
+    params.require(:location).permit(:city, :notes)
   end
 end
