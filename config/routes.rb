@@ -9,5 +9,4 @@ Rails.application.routes.draw do
 
   resources :locations
   get 'manage', to: 'locations#manage'
-  get 'navigator', to: 'locations#navigator'
 end

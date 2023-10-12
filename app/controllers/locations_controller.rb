@@ -10,9 +10,6 @@ class LocationsController < ApplicationController
     @locations = current_user.locations
   end
 
-  def navigator
-  end
-
   def create
     if current_user.locations.create(location_params)
       redirect_to new_location_path, notice: 'Location added'
