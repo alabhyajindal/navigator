@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_11_070341) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_12_031607) do
   create_table "locations", force: :cascade do |t|
     t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
-    t.date "date_visited"
-    t.date "date_left"
     t.text "notes"
     t.index ["user_id"], name: "index_locations_on_user_id"
   end

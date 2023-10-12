@@ -7,7 +7,7 @@ class LocationsController < ApplicationController
 
   def new
     @location = current_user.locations.new
-    @locations = current_user.locations.sort_by &:date_visited
+    @locations = current_user.locations
   end
 
   def create

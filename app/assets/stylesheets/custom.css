@@ -44,7 +44,7 @@ input[type=submit] {
 /* Form */
 input {
     display: block;
-    outline: none;
+    /*outline: none;*/
 }
 
 input[type=text], input[type=email], input[type=password] {
