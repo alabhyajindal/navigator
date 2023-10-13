@@ -1,14 +1,15 @@
 document.body.style.backgroundColor = 'lightblue'
 
 const input = document.getElementById('search-input')
-const search = document.getElementById('search-button')
 const suggestionsContainer = document.getElementById('suggestions')
 
-search.addEventListener('click', async (e) => {
-  const query = input.value
-  const res = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json?proximity=ip&types=place%2Clocality&access_token=pk.eyJ1IjoiYWxhYmh5YWppbmRhbCIsImEiOiJjbG5tcmYweW0ya2ZzMmxybDJwYTczZTUzIn0.v3HHB3BcrxYP4TRUJV1Qqw`)
-  const data = await res.json()
-  showSuggestions(data.features)
+input.addEventListener('keydown', async (e) => {
+  if (e.key === 'Enter') {
+    const query = input.value
+    const res = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json?proximity=ip&types=place%2Clocality&access_token=pk.eyJ1IjoiYWxhYmh5YWppbmRhbCIsImEiOiJjbG5tcmYweW0ya2ZzMmxybDJwYTczZTUzIn0.v3HHB3BcrxYP4TRUJV1Qqw`)
+    const data = await res.json()
+    showSuggestions(data.features)
+  }
 })
 
 function showSuggestions(suggestions) {
@@ -29,7 +30,8 @@ async function selectSuggestion(suggestion) {
   const token = document.querySelector('meta[name="csrf-token"]')
   const body = {
     data: {
-      coordinates: suggestion.geometry.coordinates
+      coordinates: suggestion.geometry.coordinates,
+      city: suggestion.place_name
     }
   }
   await fetch('/locations', {
