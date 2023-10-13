@@ -2,11 +2,8 @@
   <%= javascript_import_module_tag "custom/manage" %>
 <% end %>
 
-<%#= render 'form', location: @location %>
-
 <h3>Add location</h3>
-<input id='search-input' type="text"/>
-
+<input id='search-input' type="text" autocomplete="off", autofocus="true"/>
 <div id='suggestions'></div>
 
 <h3>Edit locations</h3>
@@ -14,7 +11,7 @@
   <div>
     <p>
       <%= l.city %>
-      <%= link_to 'Edit', edit_location_path(l) %>
+      <%= link_to 'Delete', location_path(l) %>
     </p>
   </div>
 <% end %>
