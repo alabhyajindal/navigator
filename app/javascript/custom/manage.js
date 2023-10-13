@@ -27,10 +27,15 @@ function showSuggestions(suggestions) {
 
 async function selectSuggestion(suggestion) {
   const token = document.querySelector('meta[name="csrf-token"]')
+  const body = {
+    data: {
+      coordinates: suggestion.geometry.coordinates
+    }
+  }
   await fetch('/locations', {
     method: 'POST',
-    body: JSON.stringify(suggestion.geometry),
-    headers: {'Content-Type': 'application/json', 'X-CSRF-Token': token.content }
+    body: JSON.stringify(body),
+    headers: {'Content-Type': 'application/json', 'X-CSRF-Token': token.content}
   }).then(() => {
     location.reload()
   })
