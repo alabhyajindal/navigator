@@ -2,9 +2,13 @@
   <%= javascript_import_module_tag "custom/manage" %>
 <% end %>
 
-<h3>Add location</h3>
 <%#= render 'form', location: @location %>
-<button id="test">Test</button>
+
+<h3>Add location</h3>
+<input id='search-input' type="text"/>
+<button id='search-button'>Search</button>
+
+<div id='suggestions'></div>
 
 <h3>Edit locations</h3>
 <% @locations.each do |l| %>
