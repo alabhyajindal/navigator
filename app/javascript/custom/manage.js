@@ -14,11 +14,24 @@ search.addEventListener('click', async (e) => {
 function showSuggestions(suggestions) {
   suggestionsContainer.innerHTML = ''
   const placesNames = suggestions.map(s => {
-    console.log(s.place_name)
     const p = document.createElement('p')
     p.textContent = s.place_name
     p.id = 'suggestion'
     suggestionsContainer.appendChild(p)
-  })
 
+    p.addEventListener('click', (e) => {
+      selectSuggestion(s)
+    })
+  })
+}
+
+async function selectSuggestion(suggestion) {
+  const token = document.querySelector('meta[name="csrf-token"]')
+  await fetch('/locations', {
+    method: 'POST',
+    body: JSON.stringify(suggestion.geometry),
+    headers: {'Content-Type': 'application/json', 'X-CSRF-Token': token.content }
+  }).then(() => {
+    location.reload()
+  })
 }
