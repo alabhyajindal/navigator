@@ -8,9 +8,10 @@
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
+  <%= yield(:custom_js) %>
 </head>
-
 <body>
+
 <%= render 'layouts/header' %>
 <%= render 'layouts/flash' %>
 <%= yield %>
