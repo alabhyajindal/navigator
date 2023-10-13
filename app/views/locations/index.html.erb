@@ -1,3 +1,9 @@
+<% content_for :custom_js do %>
+  <%= javascript_import_module_tag "custom/main" %>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+<% end %>
+
 <% unless current_user %>
   <nav>
     <%= link_to 'Sign up', signup_path %>
@@ -6,3 +12,5 @@
 <% end %>
 
 <p><%= "Hello #{current_user.name}" %></p>
+
+<div id="map" height="300px" width="400px"></div>

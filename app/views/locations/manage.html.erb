@@ -6,15 +6,12 @@
 <input id='search-input' type="text" autocomplete="off", autofocus="true"/>
 <div id='suggestions'></div>
 
-<h3>Edit locations</h3>
-<% @locations.each do |l| %>
-  <div>
-    <p>
-      <%= l.city %>
-      <%= link_to 'Delete', location_path(l) %>
-    </p>
-  </div>
-<% end %>
-
-<%= javascript_import_module_tag "custom/manage" %>
-
+<!--<h3>Edit locations</h3>-->
+<%# @locations.each do |l| %>
+<!--  <div>-->
+<!--    <p>-->
+      <%#= l.city %>
+      <%#= link_to 'Delete', location_path(l) %>
+<!--    </p>-->
+<!--  </div>-->
+<%# end %>
