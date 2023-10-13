@@ -17,6 +17,7 @@ function showSuggestions(suggestions) {
     console.log(s.place_name)
     const p = document.createElement('p')
     p.textContent = s.place_name
+    p.id = 'suggestion'
     suggestionsContainer.appendChild(p)
   })
 
