@@ -88,7 +88,15 @@ input[type=text], input[type=email], input[type=password] {
     cursor: pointer;
 }
 
+#suggestions {
+    margin-top: 12px;
+}
+
 #suggestion {
     cursor: pointer;
     /*margin: 0;*/
+}
+
+h3 {
+    margin-top: 24px;
 }
