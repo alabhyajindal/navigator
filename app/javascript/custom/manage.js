@@ -55,8 +55,10 @@ document.documentElement.addEventListener("turbo:load", async function (e) {
         body: JSON.stringify(body),
         headers: {'Content-Type': 'application/json', 'X-CSRF-Token': token.content}
       }).then(() => {
-        location.reload()
         alert('Location added!')
+        suggestionsContainer.innerHTML = ''
+        input.value = ''
+        input.focus()
       })
     }
   }
