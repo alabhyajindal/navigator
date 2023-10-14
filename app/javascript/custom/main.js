@@ -12,7 +12,6 @@ const res = await fetch('/api/locations', {method: 'GET'})
 const data = await res.json()
 
 function drawPoints(locationsData) {
-  console.log(locationsData)
   for (const location of locationsData) {
     const el = document.createElement('div')
     el.className = 'marker'

@@ -1,7 +1,8 @@
 <% content_for :custom_js do %>
-  <%#= javascript_import_module_tag "custom/manage" %>
+  <%= javascript_import_module_tag "custom/manage" %>
 <% end %>
 
 <h3>Add location</h3>
 <input id='search-input' type="text" autocomplete="off", autofocus="true"/>
+<button id="search-button">Search</button>
 <div id='suggestions'></div>
