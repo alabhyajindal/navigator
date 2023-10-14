@@ -1,5 +1,6 @@
 <% if current_user %>
   <h1><%= "#{current_user.name}'s map" %></h1>
+  <br>
   <div id="map" style="height: 500px; width: 600px"></div>
 
   <% content_for :custom_js do %>
