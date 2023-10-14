@@ -24,6 +24,15 @@ class LocationsController < ApplicationController
     redirect_to root_url, alert: 'Location deleted'
   end
 
+  def api_locations
+    locations = current_user.locations
+    data = locations.map do |l|
+      l.coordinates
+    end
+    msg = { :data => data, status: 'success' }
+    render :json => msg
+  end
+
   private
 
   def location_params

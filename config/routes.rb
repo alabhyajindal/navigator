@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   resources :locations
   get 'manage', to: 'locations#manage'
+
+  # get '/get_user_locations', to: 'locations/#get_user_locations'
+  get 'api/locations', to: 'locations#api_locations'
 end
