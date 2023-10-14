@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
 
   def create
     if current_user.locations.create(location_params)
-      redirect_to root_url, notice: 'Location added'
+      redirect_to root_url, notice: 'Location added.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class LocationsController < ApplicationController
   def destroy
     location = Location.find(params[:id])
     location.destroy
-    redirect_to root_url, alert: 'Location deleted'
+    redirect_to manage_url, alert: 'Location deleted.'
   end
 
   def api_locations

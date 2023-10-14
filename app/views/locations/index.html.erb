@@ -1,16 +1,17 @@
-<% unless current_user %>
+<% if current_user %>
+  <h1><%= "#{current_user.name}'s map" %></h1>
+  <div id="map" style="height: 500px; width: 600px"></div>
+
+  <% content_for :custom_js do %>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet'/>
+    <%= javascript_import_module_tag "custom/main" %>
+  <% end %>
+
+<% else %>
   <nav>
     <%= link_to 'Sign up', signup_path %>
     <%= link_to 'Sign in', signin_path %>
   </nav>
 <% end %>
 
-<p><%= "Hello #{current_user.name}" %></p>
-
-<div id="map" style="height: 500px; width: 600px"></div>
-
-<% content_for :custom_js do %>
-  <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
-  <%= javascript_import_module_tag "custom/main" %>
-<% end %>

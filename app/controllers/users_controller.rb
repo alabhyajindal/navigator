@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, notice: 'Signed in'
+      redirect_to root_url, notice: 'Signed in.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to root_url, notice: 'Account updated'
+      redirect_to root_url, notice: 'Account updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     session[:user_id] = nil
-    redirect_to root_url, alert: 'Account deleted'
+    redirect_to root_url, alert: 'Account deleted.'
   end
 
   private
