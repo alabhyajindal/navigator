@@ -1,7 +1,7 @@
 document.documentElement.addEventListener("turbo:load", async function (e) {
   // Hack to run this file where originally intended. Not able to find documentation to keep this scoped when using Turbo
   if (window.location.pathname === '/') {
-    document.body.style.backgroundColor = 'lightcoral'
+    console.log('Source: https://github.com/alabhyajindal/navigator')
     const res = await fetch('/api/locations', {method: 'GET'})
     const data = await res.json()
 

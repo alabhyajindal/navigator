@@ -1,7 +1,6 @@
 document.documentElement.addEventListener("turbo:load", async function (e) {
   // Hack to run this file where originally intended. Not able to find documentation to keep this scoped when using Turbo
   if (window.location.pathname === '/manage') {
-    document.body.style.backgroundColor = 'lightblue'
 
     const input = document.getElementById('search-input')
     const search = document.getElementById('search-button')
