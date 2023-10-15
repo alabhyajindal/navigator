@@ -13,15 +13,17 @@
   <% end %>
 
 <% else %>
+  <h3>Get a personal map of locations you've visited. </h3>
   <br/>
   <nav>
     <%= link_to 'Sign up', signup_path %>
     <%= link_to 'Sign in', signin_path %>
   </nav>
-  <h3>Get a personal app of locations you've visited. </h3>
   <br/>
-  <i>
-    <p>P.S. There is no email verification, this is a toy app!</p>
-  </i>
+  <h4>Or use my account:</h4>
+  <p>Email: <code>alabhya@test.com</code></p>
+  <p>Password: <code>secret</code></p>
+  <br>
+  <i><p>P.S. There is no email verification, this is a toy app!</p></i>
 <% end %>
 
