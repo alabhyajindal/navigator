@@ -59,6 +59,7 @@ document.documentElement.addEventListener("turbo:load", async function (e) {
         suggestionsContainer.innerHTML = ''
         input.value = ''
         input.focus()
+        location.reload()
       })
     }
   }

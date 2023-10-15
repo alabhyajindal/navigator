@@ -1,5 +1,8 @@
 <% if current_user %>
   <h1><%= "#{current_user.name}'s map" %></h1>
+  <% if @locations.empty? %>
+    <p>Add locations to the map using the Manage section.</p>
+  <% end %>
   <br>
   <div id="map" style="height: 500px; width: 600px"></div>
 

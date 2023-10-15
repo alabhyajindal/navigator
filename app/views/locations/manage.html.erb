@@ -3,12 +3,14 @@
 <button id="search-button">Search</button>
 <div id='suggestions'></div>
 
-<h3>Manage locations</h3>
-<% @locations.each do |l| %>
-  <p>
-    <span><%= l.city %></span>
-    <span><%= link_to 'Delete', location_path(l), data: { turbo_method: :delete } %></span>
-  </p>
+<% unless @locations.empty? %>
+  <h3>Manage locations</h3>
+  <% @locations.each do |l| %>
+    <p>
+      <span><%= l.city %></span>
+      <span><%= link_to 'Delete', location_path(l), data: { turbo_method: :delete } %></span>
+    </p>
+  <% end %>
 <% end %>
 
 <% content_for :custom_js do %>
