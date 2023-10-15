@@ -14,7 +14,7 @@
   <%= f.password_field :password_confirmation %>
 
   <% if user.new_record? %>
-    <%= f.submit 'Sign up' %>
+    <%= f.submit 'Sign up', data: { turbo: 'false' } %>
   <% else %>
     <%= f.submit 'Update Account' %>
   <% end %>
