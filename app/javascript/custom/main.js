@@ -4,12 +4,13 @@ document.documentElement.addEventListener("turbo:load", async function (e) {
     console.log('Source: https://github.com/alabhyajindal/navigator')
     const res = await fetch('/api/locations', {method: 'GET'})
     const data = await res.json()
+    const locationsData = data.data
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiYWxhYmh5YWppbmRhbCIsImEiOiJjbG5tcmYweW0ya2ZzMmxybDJwYTczZTUzIn0.v3HHB3BcrxYP4TRUJV1Qqw';
     const map = new mapboxgl.Map({
       container: 'map', // container ID
       style: 'mapbox://styles/mapbox/outdoors-v12', // style URL
-      center: [77.209006, 28.613895], // starting position [lng, lat]
+      center: locationsData[locationsData.length - 1], // starting position [lng, lat]
       zoom: 2, // starting zoom
     });
 
@@ -21,6 +22,6 @@ document.documentElement.addEventListener("turbo:load", async function (e) {
       }
     }
 
-    drawPoints(data.data)
+    drawPoints(locationsData)
   }
 })
