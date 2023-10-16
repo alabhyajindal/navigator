@@ -1,24 +1,8 @@
-# README
+### Navigator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Create an account, add locations and see it visualized on a globe.
+- Made using Ruby on Rails and Mapbox.
 
-Things you may want to cover:
+https://github.com/alabhyajindal/navigator/assets/52493077/14d30e4c-f748-448c-8a71-b4ae0a7fb0b3
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
