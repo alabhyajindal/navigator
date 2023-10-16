@@ -11,11 +11,12 @@ class LocationsController < ApplicationController
   end
 
   def create
-    if current_user.locations.create(location_params)
-      redirect_to root_url, notice: 'Location added.'
+    if current_user.locations.create(location_params).valid?
+      msg = { status: 'success' }
     else
-      render :new, status: :unprocessable_entity
+      msg = { status: 'fail' }
     end
+    render :json => msg
   end
 
   def destroy
