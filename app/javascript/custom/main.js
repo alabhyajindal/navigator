@@ -9,7 +9,7 @@ document.documentElement.addEventListener("turbo:load", async function (e) {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYWxhYmh5YWppbmRhbCIsImEiOiJjbG5tcmYweW0ya2ZzMmxybDJwYTczZTUzIn0.v3HHB3BcrxYP4TRUJV1Qqw';
     const map = new mapboxgl.Map({
       container: 'map', // container ID
-      style: 'mapbox://styles/mapbox/outdoors-v12', // style URL
+      style: 'mapbox://styles/mapbox/light-v11', // style URL
       center: locationsData[locationsData.length - 1], // starting position [lng, lat]
       zoom: 2, // starting zoom
     });
