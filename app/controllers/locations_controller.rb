@@ -2,6 +2,7 @@ class LocationsController < ApplicationController
   before_action :require_signin, except: [:index]
 
   def index
+    @user = User.new
     @locations = current_user.locations if current_user
   end
 

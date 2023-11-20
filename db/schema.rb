@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_12_073524) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_20_162556) do
   create_table "locations", force: :cascade do |t|
     t.string "city"
     t.datetime "created_at", null: false
@@ -24,9 +24,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_12_073524) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "email_confirmed"
   end
 
   add_foreign_key "locations", "users"
