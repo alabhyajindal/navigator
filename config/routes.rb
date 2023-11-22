@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
   root to: 'locations#index'
-
   resources :users
-  resource :session, only: [:new, :create, :destroy]
-  get 'signin', to: 'users#new'
-
   resources :locations
   get 'manage', to: 'locations#manage'
-
   get 'api/locations', to: 'locations#api_locations'
 end
